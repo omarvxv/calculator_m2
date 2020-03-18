@@ -1,6 +1,7 @@
 document.getElementById('calculate').addEventListener('click', getResult);
 
 function getResult() {
+    // выводит сумму депозита при окончании срока
     let deposit = Number(document.getElementById('deposit').value);
     let refill = Number(document.getElementById('refill').value);
     let percent = Number(document.getElementById('percent').value);
@@ -12,7 +13,7 @@ function getResult() {
         errorBlock.innerText = error;
         errorBlock.style.display = 'block';
         delete error;
-        return;
+        return NaN;
     }
     errorBlock.style.display = 'none';
     let month = Math.floor(date / 30);
@@ -25,6 +26,7 @@ function getResult() {
 }
 
 function findError(deposit, refill, percent, date) {
+    // находит ошибки входных данных пользователем
     let result = '';
     if (deposit < 0 || deposit == 0) {
         result += 'Поле: Начальная сумма вклада содержит ошибку ввода \n';
