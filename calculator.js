@@ -1,20 +1,15 @@
 document.getElementById('calculate').addEventListener('click', getResult);
+let errorBlock = document.getElementById('error');
 
 function getResult() {
     let deposit = Number(document.getElementById('deposit').value);
     let refill = Number(document.getElementById('refill').value);
     let percent = Number(document.getElementById('percent').value);
     let date = Number(document.getElementById('date').value);
-    let errorBlock = document.getElementById('error');
-    if (findError(deposit, refill, percent, date) != '') {
-        let error = findError(deposit, refill, percent, date);
-        console.log(error);
-        errorBlock.innerText = error;
-        errorBlock.style.display = 'block';
-        return NaN;
+    if (Boolean(findError(deposit, refill, percent, date))) {
+        errorBlock.style.display = 'none';
+        alert(calculateDeposit(deposit, refill, percent, date));
     }
-    errorBlock.style.display = 'none';
-    alert(calculateDeposit(deposit, refill, percent, date));
 }
 
 function calculateDeposit(deposit, refill, percent, date) {
@@ -24,7 +19,7 @@ function calculateDeposit(deposit, refill, percent, date) {
     for (let i = 0; i < month; i++) {
         baseAmount = baseAmount + refill + baseAmount * percent / 100 / 12;
     }
-    return baseAmount;
+    return Number(baseAmount.toFixed(2));
 }
 
 function findError(deposit, refill, percent, date) {
@@ -42,5 +37,12 @@ function findError(deposit, refill, percent, date) {
     if (date <= 0 || Math.trunc(date) != date) {
         result += 'Поле: Срок содержит ошибку ввода';
     }
-    return result;
+    if (result != '') {
+        console.log(result);
+        errorBlock.style.display = 'block';
+        errorBlock.innerText = result;
+        return NaN;
+    } else {
+        return true;
+    }
 }
