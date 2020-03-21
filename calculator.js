@@ -1,4 +1,9 @@
 document.getElementById('calculate').addEventListener('click', getResult);
+document.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter'){
+        getResult();
+    }
+});
 let errorBlock = document.getElementById('error');
 
 function getResult() {

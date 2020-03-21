@@ -1,28 +1,17 @@
 html,body,main{
     height: 100%;
 }
-body{
+body,main, .container{
     font-family: Roboto, sans-serif;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    height: 100%;
-    justify-content: center;
-}
-main{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    height: 100%;
     justify-content: center;
 }
 .container{
     width: 500px;
     margin: 0 auto;
     padding: 30px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
     justify-content: space-between;
     background: #ecfbfc;
     border-radius: 5px;
