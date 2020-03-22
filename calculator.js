@@ -1,6 +1,6 @@
 document.getElementById('calculate').addEventListener('click', getResult);
 document.addEventListener('keydown', (event) => {
-    if(event.key === 'Enter'){
+    if (event.key === 'Enter') {
         getResult();
     }
 });
