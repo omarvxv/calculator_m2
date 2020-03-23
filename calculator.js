@@ -1,5 +1,5 @@
 document.getElementById('calculate').addEventListener('click', getResult);
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
         getResult();
     }
