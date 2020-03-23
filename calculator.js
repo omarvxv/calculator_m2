@@ -11,7 +11,7 @@ function getResult() {
     let refill = Number(document.getElementById('refill').value);
     let percent = Number(document.getElementById('percent').value);
     let date = Number(document.getElementById('date').value);
-    if (Boolean(findError(deposit, refill, percent, date))) {
+    if (findError(deposit, refill, percent, date)) {
         errorBlock.style.display = 'none';
         alert(calculateDeposit(deposit, refill, percent, date));
     }

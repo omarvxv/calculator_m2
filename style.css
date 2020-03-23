@@ -1,7 +1,11 @@
-html,body,main{
+html,
+body,
+main{
     height: 100%;
 }
-body,main, .container{
+body,
+main,
+.container{
     font-family: Roboto, sans-serif;
     display: flex;
     flex-wrap: nowrap;
@@ -29,7 +33,7 @@ li{
 }
 button{
     padding: 15px;
-    width:  70%;
+    width: 70%;
     margin: 30px auto 0;
     background-color: #ffb0cd;
     border: none;
